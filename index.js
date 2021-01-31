@@ -6,8 +6,21 @@ for (let i = 0; i<numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     // {alert("i got clicked!");
 
-let audio = new Audio("sounds/tom-1.mp3");
-audio.play();
+    let buttonInnerHTML = this.innerHTML;
+
+    makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
+
 
 });
 };
+
+
+document.addEventListener("keypress", function(event) {
+
+    makeSound(event.key);
+  
+    buttonAnimation(event.key);
+  
+  });
